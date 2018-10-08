@@ -20,7 +20,7 @@ public class OrderSecurityService extends WebSecurityConfigurerAdapter{
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("chintu").password("{noop}chintu")
-		.roles("USER").and().withUser("chintu").password("{noop}chintu")
+		.roles("USER").and().withUser("chintu1").password("{noop}chintu1")
 		.roles("USER", "ADMIN");
 		
 	}
