@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -14,16 +15,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan("com.order")
 @EnableJpaRepositories("com.order")
 @EntityScan("com.order.entity")
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = {org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration.class})
 @EnableTransactionManagement
-public class SpringClient extends SpringBootServletInitializer {
+@EnableEurekaClient
+public class OrderClient extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(SpringClient.class);
+		return builder.sources(OrderClient.class);
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringClient.class, args);
+		SpringApplication.run(OrderClient.class, args);
 	}
 }
