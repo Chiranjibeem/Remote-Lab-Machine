@@ -7,51 +7,7 @@ import java.util.TreeSet;
 
 public class SortingUsingLambda {
 
-	private class Employee {
-
-		private String empID;
-
-		private String firstName;
-
-		private String lastName;
-
-		public Employee(String empID, String firstName, String lastName) {
-			super();
-			this.empID = empID;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-
-		public String getEmpID() {
-			return empID;
-		}
-
-		public void setEmpID(String empID) {
-			this.empID = empID;
-		}
-
-		public String getFirstName() {
-			return firstName;
-		}
-
-		public void setFirstName(String firstName) {
-			this.firstName = firstName;
-		}
-
-		public String getLastName() {
-			return lastName;
-		}
-
-		public void setLastName(String lastName) {
-			this.lastName = lastName;
-		}
-
-		@Override
-		public String toString() {
-			return "Employee [empID=" + empID + ", firstName=" + firstName + ", lastName=" + lastName + "]";
-		}
-
-	}
+	
 
 	public static void main(String[] args) {
 
@@ -99,10 +55,9 @@ public class SortingUsingLambda {
 		System.out.println("*********************************");
 
 		ArrayList<Employee> empList = new ArrayList<>();
-		SortingUsingLambda sorting = new SortingUsingLambda();
-		empList.add(sorting.new Employee("F67676", "Chintu", "Mohapatra"));
-		empList.add(sorting.new Employee("F6934", "Shekhar", "Reddy"));
-		empList.add(sorting.new Employee("F70876", "Lokesh", "Dulha"));
+		empList.add(new Employee("F67676", "Chintu", "Mohapatra",1000));
+		empList.add(new Employee("F6934", "Shekhar", "Reddy",1000));
+		empList.add(new Employee("F70876", "Lokesh", "Dulha",1000));
 
 		System.out.println("Before Sorting");
 		System.out.println(empList);

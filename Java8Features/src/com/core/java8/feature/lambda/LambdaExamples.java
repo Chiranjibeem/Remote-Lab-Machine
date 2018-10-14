@@ -6,6 +6,19 @@ public class LambdaExamples {
 	interface _1Lambda {
 
 		public String printMessage(String name);
+		
+		default void m1() {
+			System.out.println("m1");
+		}
+		default void m2() {
+			System.out.println("m2");
+		}
+		static void m3() {
+			System.out.println("m3");
+		}
+		static void m4() {
+			System.out.println("m4");
+		}
 	}
 
 	@FunctionalInterface
