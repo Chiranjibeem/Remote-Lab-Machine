@@ -1,0 +1,9 @@
+In java 8, permgen has been removed. Instead of Permgen we are using metaspace
+Earilier due to all class load we used to get out of memory exception as permgen was part of heap memory and ther are some limitation of storage
+where as metaspace is not part of heap memory, its part of native memory it utilize OS memory
+
+Below syntax used to set the memory utilization for permgen
+-XX:MaxPermSize
+
+Below syntax used to set the memory utilization for metaspace
+-XX:MaxMetaspaceSize
